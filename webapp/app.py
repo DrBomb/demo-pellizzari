@@ -14,11 +14,6 @@ for x in config['modules']:
     blueprints.append(bp)
     app.register_blueprint(bp.view,url_prefix="/"+x['name'])
     
-bp = uptime.uptime("test",{"title":"asdas"})
-bp2 = uptime.uptime("test2",{"title":"asdasasdasdasdasd"})
-app.register_blueprint(bp.view,url_prefix="/test")
-app.register_blueprint(bp2.view,url_prefix="/test2")
-
 @app.route('/')
 def index2():
   return render_template('index.html',title = config['app']['title'])

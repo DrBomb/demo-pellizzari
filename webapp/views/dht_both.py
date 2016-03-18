@@ -6,5 +6,8 @@ class dht_both:
     self.view = Blueprint(name,__name__,template_folder="templates")
     self.params = params
     @self.view.route('/')
-    def index(): 
+    def index(self): 
       return render_template('dht_both.html',params=self.params)
+    @self.view.route('/feed/temp/<int:items>')
+    def temp(self,items):
+      
